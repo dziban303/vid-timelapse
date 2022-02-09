@@ -6,6 +6,7 @@ import argparse
 # argparse to give help if not enough args passed
 parser = argparse.ArgumentParser()
 parser.add_argument("file",help = "filename of video")
+args = parser.parse_args()
 a = sys.argv[1]
 file = a
 newfile = file
