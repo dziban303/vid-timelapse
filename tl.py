@@ -1,7 +1,15 @@
 # python code
 import cv2 as cv
 import numpy as np
-c=cv.VideoCapture("iss-6feb.mp4")
+import sys
+import argparse
+# argparse to give help if not enough args passed
+parser = argparse.ArgumentParser()
+parser.add_argument("file",help = "filename of video")
+a = sys.argv[1]
+file = a
+newfile = file
+c=cv.VideoCapture(file)
 r,m=c.read()
 while(c.isOpened()):
     r,f=c.read()
@@ -9,4 +17,4 @@ while(c.isOpened()):
         m=np.maximum(f,m)
     else:
         break
-cv.imwrite("mp2.png",m)
+cv.imwrite("output.png",m)
